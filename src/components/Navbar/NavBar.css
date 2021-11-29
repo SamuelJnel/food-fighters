@@ -1,0 +1,28 @@
+.nav {
+  display: flex;
+  flex: 1;
+  height: 55px;
+  background-color: grey;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+}
+
+.nav ul li {
+  width: 120px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.nav ul li a:hover {
+  cursor: pointer;
+}
