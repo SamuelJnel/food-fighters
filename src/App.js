@@ -17,22 +17,17 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 const App = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [user, setUser] = useState(userService.getUser());
-  //const [logout, setLogout] = useState();
 
-  useEffect(() => {
-    async function fetchRestaurants() {
-      const data = await getRestaurants();
+  useEffect(async () => {
+    const data = await getRestaurants();
 
-      setRestaurants(data);
-    }
-
-    fetchRestaurants();
+    setRestaurants(data);
   }, []);
 
   const handleSignupOrLogin = () => {
     setUser(userService.getUser());
   };
-  console.log(user);
+  // console.log(user);
 
   const handleLogout = () => {
     userService.logout();

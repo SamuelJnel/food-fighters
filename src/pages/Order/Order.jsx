@@ -1,24 +1,15 @@
 import React, { useEffect, useState } from "react";
+
 import { deleteOrder, getOrders } from "../../services/orders";
 
 const Order = (props) => {
   const [orders, setOrders] = useState([]);
 
-  useEffect(() => {
-    async function fetchOrders() {
-      const data = await getOrders();
+  useEffect(async () => {
+    const data = await getOrders();
 
-      setOrders(data);
-    }
-
-    fetchOrders();
+    setOrders(data);
   }, []);
-
-  const handleDelete = async (id) => {
-    deleteOrder(id);
-    const items = await getOrders();
-    setOrders(items);
-  };
 
   return (
     <div>
@@ -36,7 +27,7 @@ const Order = (props) => {
                 <button
                   className="btn btn-info"
                   onClick={() => {
-                    handleDelete(el._id);
+                    props.handleDelete(el._id);
                   }}
                 >
                   Cancel Order

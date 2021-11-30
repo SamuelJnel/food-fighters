@@ -11,6 +11,10 @@ const restaurantSchema = new Schema({
   NumOfBags: { type: Number },
 
   price: { type: Number },
+
+  lat: { type: Number },
+
+  lon: { type: Number },
 });
 
 module.exports = mongoose.model("Restaurant", restaurantSchema);

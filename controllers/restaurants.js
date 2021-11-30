@@ -1,7 +1,7 @@
 const Restaurant = require("../models/restaurant");
 const Order = require("../models/order");
 
-module.exports = { index, createOrder };
+module.exports = { index, createOrder, edit };
 
 function index(req, res) {
   Restaurant.find({}, function (err, restaurants) {
@@ -17,4 +17,12 @@ async function createOrder(req, res) {
   await newOrder.save(function (err) {
     res.json(newOrder);
   });
+}
+
+async function edit(req, res) {
+  // const newOrder = new Order(req.body);
+  // //console.log(newOrder);
+  // await newOrder.save(function (err) {
+  //   res.json(newOrder);
+  // });
 }
