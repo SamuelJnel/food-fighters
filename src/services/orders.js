@@ -7,6 +7,5 @@ export function getOrders() {
 export function deleteOrder(id) {
   return fetch(`http://localhost:3001/api/orders/${id}/delete`, {
     method: "DELETE",
-    mode: "cors",
   }).then((res) => res.json);
 }

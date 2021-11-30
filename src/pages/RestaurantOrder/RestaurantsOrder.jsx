@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-//import React, { Component } from "react";
+
 import { useParams, useHistory } from "react-router-dom";
 import { getRestaurants } from "../../services/restaurants";
 import { createOrder } from "../../services/restaurants";
-//import Map from "../../components/Map/Map";
+
 import "./RestaurantsOrder.css";
 
 const RestaurantOrder = () => {
@@ -45,12 +45,13 @@ const RestaurantOrder = () => {
       restaurantId: id,
     };
     await createOrder(formData);
-    // const updateBag = bagNumber - formData.quantity;
-    // console.log(updateBag);
-    // const newRest = { ...currentRestaurant };
-    // newRest.NumOfBags = updateBag;
-    // console.log(newRest);
 
+    const updateBag = bagNumber - formData.quantity;
+    console.log(updateBag);
+    currentRestaurant.NumOfBags = updateBag;
+
+    setRestaurants((currentRestaurant) => [...currentRestaurant]);
+    console.log(restaurants);
     history.push("/order"); //redirects
 
     // setRestaurants(newRest);

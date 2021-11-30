@@ -8,9 +8,7 @@ function index(req, res) {
   });
 }
 
-function deleteOrder(req, res) {
-  Order.findByIdAndDelete(req.params.id, function (err) {
-    console.log(req.params.id);
-    res.json("deleted!");
-  });
+async function deleteOrder(req, res) {
+  await Order.findByIdAndDelete(req.params.id);
+  res.json("deleted!");
 }

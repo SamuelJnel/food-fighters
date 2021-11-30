@@ -7,17 +7,18 @@ const Order = (props) => {
 
   async function fetchOrders() {
     const data = await getOrders();
-
     setOrders(data);
   }
 
   useEffect(() => {
     fetchOrders();
-  }, [setOrders]);
+  }, []);
 
   const handleDelete = async (id) => {
     deleteOrder(id);
+    console.log(id);
     const items = await getOrders();
+    console.log(items);
     setOrders(items);
   };
 
@@ -36,7 +37,7 @@ const Order = (props) => {
               <div className="card-action">
                 <button
                   className="btn btn-info"
-                  onClick={() => {
+                  onClick={(_id) => {
                     handleDelete(el._id);
                   }}
                 >
