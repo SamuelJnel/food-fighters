@@ -45,16 +45,16 @@ const RestaurantOrder = () => {
       restaurantId: id,
     };
     await createOrder(formData);
-    const updateBag = bagNumber - formData.quantity;
-    console.log(updateBag);
-    const newRest = { ...currentRestaurant };
-    newRest.NumOfBags = updateBag;
-    console.log(newRest);
+    // const updateBag = bagNumber - formData.quantity;
+    // console.log(updateBag);
+    // const newRest = { ...currentRestaurant };
+    // newRest.NumOfBags = updateBag;
+    // console.log(newRest);
 
     history.push("/order"); //redirects
 
-    setRestaurants(newRest);
-    getRestaurants();
+    // setRestaurants(newRest);
+    // getRestaurants();
   };
 
   return (
