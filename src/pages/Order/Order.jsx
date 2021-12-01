@@ -16,9 +16,9 @@ const Order = (props) => {
 
   const handleDelete = async (id) => {
     deleteOrder(id);
-    console.log(id);
+    // console.log(id);
     const items = await getOrders();
-    console.log(items);
+    //console.log(items);
     setOrders(items);
   };
 

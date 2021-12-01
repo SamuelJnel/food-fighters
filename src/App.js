@@ -62,10 +62,10 @@ const App = () => {
             <Restaurants restaurants={restaurants} />
           </ProtectedRoute>
           <ProtectedRoute exact path="/order">
-            <Order restaurants={restaurants} />
+            <Order restaurants={restaurants} user={user} />
           </ProtectedRoute>
           <ProtectedRoute exact path="/restaurants/:id">
-            <RestaurantOrder />
+            <RestaurantOrder user={user} />
           </ProtectedRoute>
         </Switch>
       </Router>

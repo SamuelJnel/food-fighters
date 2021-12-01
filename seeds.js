@@ -16,9 +16,6 @@ const restaurants = [
     NumOfBags: 5,
 
     price: 4.7,
-
-    lat: 43.642567,
-    lon: 79.3871,
   },
 
   {
@@ -31,8 +28,6 @@ const restaurants = [
     NumOfBags: 7,
 
     price: 3.5,
-    lat: 43.678,
-    lon: 79.4094,
   },
 ];
 

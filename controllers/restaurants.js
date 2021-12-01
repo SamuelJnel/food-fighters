@@ -12,17 +12,18 @@ function index(req, res) {
 
 async function createOrder(req, res) {
   const newOrder = new Order(req.body);
-  //console.log(newOrder);
-
-  await newOrder.save(function (err) {
-    res.json(newOrder);
-  });
+  await newOrder.save();
+  res.json(newOrder);
 }
 
 async function edit(req, res) {
-  // const newOrder = new Order(req.body);
-  // //console.log(newOrder);
-  // await newOrder.save(function (err) {
-  //   res.json(newOrder);
-  // });
+  const updateRest = await Restaurant.findByIdAndUpdate(
+    req.params.id,
+    req.body
+  );
+  console.log(updateRest);
+  console.log(updateRest, "this is for update rest");
+
+  await updateRest.save();
+  res.json(updateRest);
 }
