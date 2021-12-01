@@ -4,7 +4,7 @@ export function getRestaurants() {
   }).then((res) => res.json());
 }
 
-export function updateRest(id, restaurants) {
+export function updateRest(id) {
   //console.log(data);
   return fetch(`http://localhost:3001/api/restaurants/${id}/edit`, {
     method: "POST",
@@ -16,7 +16,7 @@ export function updateRest(id, restaurants) {
 
 export function createOrder(data) {
   return fetch("http://localhost:3001/api/restaurants/:id", {
-    method: "PUT",
+    method: "POST",
     headers: new Headers({ "Content-Type": "application/json" }),
     body: JSON.stringify(data),
   }).then((res) => res.json);

@@ -17,13 +17,10 @@ async function createOrder(req, res) {
 }
 
 async function edit(req, res) {
-  const updateRest = await Restaurant.findByIdAndUpdate(
-    req.params.id,
-    req.body
-  );
-  console.log(updateRest);
-  console.log(updateRest, "this is for update rest");
-
-  await updateRest.save();
-  res.json(updateRest);
+  // const updateRest = await Restaurant.findByIdAndUpdate(
+  //   req.params.id,
+  //   req.body
+  // );
+  // await updateRest.save();
+  // res.json(updateRest);
 }

@@ -11,6 +11,8 @@ const restaurantSchema = new Schema({
   NumOfBags: { type: Number },
 
   price: { type: Number },
+
+  hasSupply: { type: Boolean },
 });
 
 module.exports = mongoose.model("Restaurant", restaurantSchema);

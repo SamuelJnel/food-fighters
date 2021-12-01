@@ -16,6 +16,8 @@ const restaurants = [
     NumOfBags: 5,
 
     price: 4.7,
+
+    hasSupply: false,
   },
 
   {
@@ -28,6 +30,8 @@ const restaurants = [
     NumOfBags: 7,
 
     price: 3.5,
+
+    hasSupply: true,
   },
 ];
 
