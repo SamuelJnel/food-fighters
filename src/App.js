@@ -14,6 +14,7 @@ import Signup from "./pages/Signup/Signup";
 import userService from "./services/userService";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Edit from "./pages/Edit/Edit";
+import { updateRest } from "./services/restaurants";
 
 const App = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -49,9 +50,15 @@ const App = () => {
               />
             )}
           ></Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
+          <Route
+            path="/signup"
+            render={({ history }) => (
+              <Signup
+                history={history}
+                handleSignupOrLogin={handleSignupOrLogin}
+              />
+            )}
+          ></Route>
           <Route exact path="/">
             <Home />
           </Route>
@@ -62,7 +69,7 @@ const App = () => {
           <ProtectedRoute exact path="/restaurants">
             <Restaurants restaurants={restaurants} />
           </ProtectedRoute>
-          <ProtectedRoute exact path="/restaurants/:id/edit">
+          <ProtectedRoute exact path="/restaurants/edit/:id">
             <Edit />
           </ProtectedRoute>
           <ProtectedRoute exact path="/order">

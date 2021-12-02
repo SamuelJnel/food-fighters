@@ -3,7 +3,7 @@ const router = express.Router();
 const restaurantsControllers = require("../controllers/restaurants");
 
 router.get("/", restaurantsControllers.index);
-router.get("/edit/:id", restaurantsControllers.edit);
+router.put("/edit/:id", restaurantsControllers.edit);
 router.post("/:id", restaurantsControllers.createOrder);
 
 // function checkAuth(req, res, next) {

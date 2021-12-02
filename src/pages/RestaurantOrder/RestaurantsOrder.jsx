@@ -13,7 +13,7 @@ const RestaurantOrder = (props) => {
   console.log(currentRestaurant, "current rest");
   console.log(props.restaurants, "restaurants");
 
-  if (currentRestaurant.hasSupply === false) {
+  if (currentRestaurant.hasSupply === "false") {
     return (
       <div>
         <h3> We have no supply today.</h3>

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
-  quantity: { type: String, min: 0, max: 8 },
+  quantity: { type: Number, min: 0, max: 8 },
 
   pickUpTime: { type: String },
 

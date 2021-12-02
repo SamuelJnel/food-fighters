@@ -19,7 +19,7 @@ const Restaurants = (props) => {
                 <Link to={`/restaurants/${el._id}`}>
                   <button className="btn btn-primary">Purchase</button>
                 </Link>
-                <Link to={`/restaurants/${el._id}/edit`}>
+                <Link to={`/restaurants/edit/${el._id}`}>
                   <button className="btn btn-primary">Update</button>
                 </Link>
               </div>

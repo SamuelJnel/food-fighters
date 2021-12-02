@@ -17,7 +17,7 @@ const restaurants = [
 
     price: 4.7,
 
-    hasSupply: false,
+    hasSupply: "false",
   },
 
   {
@@ -31,7 +31,7 @@ const restaurants = [
 
     price: 3.5,
 
-    hasSupply: true,
+    hasSupply: "true",
   },
 ];
 

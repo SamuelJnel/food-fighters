@@ -24,6 +24,8 @@ class Signup extends Component {
     /**send data to api by calling the signup function in your userService */
     try {
       await userService.signup(this.state);
+      this.props.handleSignupOrLogin();
+      this.props.history.push("/restaurants");
     } catch (err) {
       console.log(err);
     }

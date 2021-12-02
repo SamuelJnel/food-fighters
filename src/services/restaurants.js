@@ -4,13 +4,13 @@ export function getRestaurants() {
   }).then((res) => res.json());
 }
 
-export function updateRest(id) {
+export function updateRest(data, id) {
   //console.log(data);
-  return fetch(`http://localhost:3001/api/restaurants/${id}/edit`, {
-    method: "POST",
+  return fetch(`http://localhost:3001/api/restaurants/edit/${id}`, {
+    method: "PUT",
 
     headers: new Headers({ "Content-Type": "application/json" }),
-    body: JSON.stringify(id),
+    body: JSON.stringify(data),
   }).then((res) => res.json);
 }
 
