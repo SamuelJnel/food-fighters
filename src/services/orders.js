@@ -1,7 +1,7 @@
 export function getOrders() {
   console.log(localStorage);
   let token = localStorage.getItem("token");
-  return fetch("/api/orders", {
+  return fetch("http://localhost:3001/api/orders", {
     headers: new Headers({
       "Content-Type": "application/json",
       Authorization: token,
@@ -11,7 +11,7 @@ export function getOrders() {
 }
 
 export function deleteOrder(id) {
-  return fetch(`/api/orders/${id}/delete`, {
+  return fetch(`http://localhost:3001/api/orders/${id}/delete`, {
     method: "DELETE",
   }).then((res) => res.json);
 }
