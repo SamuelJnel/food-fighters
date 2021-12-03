@@ -1,12 +1,12 @@
 export function getRestaurants() {
-  return fetch("http://localhost:3001/api/restaurants", {
+  return fetch("/api/restaurants", {
     mode: "cors",
   }).then((res) => res.json());
 }
 
 export function updateRest(data, id) {
   //console.log(data);
-  return fetch(`http://localhost:3001/api/restaurants/edit/${id}`, {
+  return fetch(`/api/restaurants/edit/${id}`, {
     method: "PUT",
 
     headers: new Headers({ "Content-Type": "application/json" }),
@@ -16,7 +16,7 @@ export function updateRest(data, id) {
 
 export function createOrder(data) {
   let token = localStorage.getItem("token");
-  return fetch("http://localhost:3001/api/restaurants/:id", {
+  return fetch("/api/restaurants/:id", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
