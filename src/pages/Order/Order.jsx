@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Order.css";
 
 import { deleteOrder, getOrders } from "../../services/orders";
 
@@ -30,25 +31,26 @@ const Order = (props) => {
     ? orders.map((el) => el.userId === user._id)
     : [];
 
-  console.log(currentUserOrders);
-
   return (
     <div>
       {orders && (
-        <div>
-          {orders.map((el, idx) => (
-            <div key={idx} className="row">
-              <div key={idx} className="sm-col-6">
+        <div className="item-container ">
+          {currentUserOrders.map((el, idx) => (
+            <div key={idx} className="row ">
+              <div className="col s12 m6">
                 <div className="card blue-grey darken-1">
                   <div className="card-content white-text">
-                    <span className="card-title">Card Title</span>
-                    <p>Number of Bags: {el.quantity}</p>
-                    <p>Pick-up Date: {el.pickUpDate}</p>
-                    <p>Pick-up Date: </p>
+                    <span className="card-title">
+                      Order for: {el.establishment}
+                    </span>
+                    <p> Number of Bags: {el.quantity}</p>
+                    <p>Pick-up Date: {el.pickUpDate /*.slice(0, 10)*/}</p>
+                    <p>Pick-up Date: {el.pickUpTime}</p>
+                    <p>Conformation code: {el.conformationCode}</p>
                   </div>
                   <div className="card-action">
                     <button
-                      className="btn btn-info"
+                      className="btn teal darken-3"
                       onClick={(_id) => {
                         handleDelete(el._id);
                       }}

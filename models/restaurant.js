@@ -13,6 +13,8 @@ const restaurantSchema = new Schema({
   price: { type: Number },
 
   hasSupply: { type: String },
+
+  image: { type: String },
 });
 
 module.exports = mongoose.model("Restaurant", restaurantSchema);

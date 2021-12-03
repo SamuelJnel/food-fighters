@@ -5,27 +5,50 @@ import { Link } from "react-router-dom";
 
 const Restaurants = (props) => {
   return (
-    <div className="list-container">
+    <div className="card-container">
       {props.restaurants.map((el, idx) => (
-        <div key={idx} className="row list-container-card">
-          <div className="col-sm-6">
-            <div className="card">
-              <div className="card-header">Img</div>
-              <div className="card-body">
-                <h5 className="card-title">{el.name}</h5>
-                <p className="card-text">Address: {el.address}</p>
-                <p className="card-text">Pick-up Time: {el.pickUpTime}</p>
-                <p className="card-text">Price: ${el.price}</p>
-                <p className="card-text">Number of Bags: {el.NumOfBags}</p>
-                <Link to={`/restaurants/${el._id}`}>
-                  <button className="btn btn-primary">Purchase</button>
-                </Link>
-                {props.currentUser.name === "admin" && (
-                  <Link to={`/restaurants/edit/${el._id}`}>
-                    <button className="btn btn-primary">Update</button>
-                  </Link>
-                )}
-              </div>
+        <div key={idx} className="card">
+          <div className="card-image waves-effect waves-block waves-light">
+            <img className="activator" src={el.image} alt="food-img" />
+          </div>
+          <div className="card-content">
+            <span className="card-title activator grey-text text-darken-4">
+              <h3>{el.name}</h3>
+              <i className="material-icons right">more_vert</i>
+            </span>
+            <Link to={`/restaurants/${el._id}`}>
+              <button className="btn teal darken-3 ">Purchase</button>
+            </Link>
+
+            {props.currentUser.name === "admin" && (
+              <Link to={`/restaurants/edit/${el._id}`}>
+                <button className=" btn teal darken-3 button-update">
+                  Update
+                </button>
+              </Link>
+            )}
+          </div>
+          <div className="card-reveal">
+            <span className="card-title grey-text text-darken-4">
+              <h2>{el.name}</h2>
+              <i className="material-icons right">close</i>
+            </span>
+            <div className="details">
+              <p>
+                <strong> Address:</strong> {el.address}
+              </p>
+              <p>
+                <strong>Pick-up Time:</strong> {el.pickUpTime}
+              </p>
+              <p>
+                <strong>Price:</strong> ${el.price}
+              </p>
+              <p>
+                <strong>Number of Bags:</strong> {el.NumOfBags}
+              </p>
+              <p>
+                <strong>Pick-up Time:</strong> {el.pickUpTime}
+              </p>
             </div>
           </div>
         </div>

@@ -10,8 +10,6 @@ const RestaurantOrder = (props) => {
   const user = props.user;
 
   const currentRestaurant = props.restaurants.find((el) => el._id === id);
-  console.log(currentRestaurant, "current rest");
-  console.log(props.restaurants, "restaurants");
 
   if (currentRestaurant.hasSupply === "false") {
     return (
@@ -31,10 +29,11 @@ const RestaurantOrder = (props) => {
 
   return (
     <div>
-      <OrderForm id={id} user={user} />
-
+      <div className="order-form-container">
+        <OrderForm id={id} user={user} />
+      </div>
       {!props.currentRestaurant && (
-        <div>
+        <div className="restaurant-container">
           <p>{currentRestaurant.name}</p>
           <p>Address: {currentRestaurant.address}</p>
           <p>Price: ${currentRestaurant.price}</p>

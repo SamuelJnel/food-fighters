@@ -42,16 +42,16 @@ const UpdateForm = (props) => {
     //console.log(restaurants);
     history.push("/restaurants"); //redirects
   };
+  console.log(restaurants);
 
   return (
     <div>
-      Update form
       <form>
         <label>Supply</label>
         <div>
           <div className="select">
             <select value={hasSupply} onChange={handleSupplyChange}>
-              <option value="Select">Does your restaurant has supply?</option>
+              <option value="Select">Does your restaurant have supply?</option>
               <option value={true}>Yes</option>
               <option value={false}>No</option>
             </select>
@@ -72,7 +72,7 @@ const UpdateForm = (props) => {
           </div>
         </div>
         <div className="control">
-          <button className="btn btn-primary" onClick={handleFormSubmit}>
+          <button className="btn teal darken-3" onClick={handleFormSubmit}>
             Submit
           </button>
         </div>

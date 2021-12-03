@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { getRestaurants } from "./services/restaurants";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/Navbar/NavBar";
-import About from "./pages/About/About";
 import Order from "./pages/Order/Order";
 import Restaurants from "./pages/Restaurants/Restaurants";
 import RestaurantOrder from "./pages/RestaurantOrder/RestaurantsOrder";
@@ -60,9 +59,6 @@ const App = () => {
           ></Route>
           <Route exact path="/">
             <Home />
-          </Route>
-          <Route path="/about">
-            <About />
           </Route>
 
           <ProtectedRoute exact path="/restaurants">

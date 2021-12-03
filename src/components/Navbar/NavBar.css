@@ -4,6 +4,7 @@
   height: 70px;
   background-color: #778899;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .nav ul {
@@ -24,7 +25,7 @@
 
 .nav ul li:hover {
   cursor: pointer;
-  background-color: #00acc1;
+  background-color: #00897b;
   font-weight: bold;
 }
 
@@ -34,7 +35,7 @@
 }
 
 .nav ul li.active {
-  background-color: #00acc1;
+  background-color: #00897b;
 }
 .nav ul li span {
   color: white;

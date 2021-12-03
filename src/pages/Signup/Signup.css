@@ -1,0 +1,16 @@
+.signup-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  /* width: 500px; */
+}
+form {
+  margin-top: 75px;
+  width: 500px;
+}
+
+button {
+  color: white;
+}

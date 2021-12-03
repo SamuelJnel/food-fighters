@@ -36,48 +36,50 @@ class Signup extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h3>Sign Up</h3>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Name"
-            className="form-control"
-            name="name"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email"
-            className="form-control"
-            name="email"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            className="form-control"
-            name="password"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            name="confirmPassword"
-            className="form-control"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <button className="btn btn-default">Sign up</button>
-        </div>
-      </form>
+      <div className="signup-form">
+        <form onSubmit={this.handleSubmit}>
+          <h3>Sign Up</h3>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Name"
+              className="form-control"
+              name="name"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email"
+              className="form-control"
+              name="email"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              className="form-control"
+              name="password"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              name="confirmPassword"
+              className="form-control"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-group signup-btn">
+            <button className="btn teal darken-3 signup-btn">Sign up</button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

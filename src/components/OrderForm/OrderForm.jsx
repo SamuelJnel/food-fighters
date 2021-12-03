@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { getRestaurants } from "../../services/restaurants";
 import { createOrder } from "../../services/restaurants";
+import "./OrderForm.css";
 
 const OrderForm = (props) => {
   let { id } = useParams();
@@ -9,6 +10,8 @@ const OrderForm = (props) => {
 
   const [restaurants, setRestaurants] = useState([]);
   const [quantity, setQuantity] = useState("");
+
+  let code = Math.random().toString(36).substring(2, 7);
 
   useEffect(() => {
     async function fetchRestaurants() {
@@ -26,11 +29,15 @@ const OrderForm = (props) => {
     setQuantity(event.target.value);
   };
 
+  console.log(code);
+
   const handleFormSubmit = async (event) => {
     //stops page from reloading when btn is clicked
     event.preventDefault();
     const formData = {
       quantity,
+      conformationCode: code,
+      establishment: currentRestaurant.name,
       pickUpTime: currentRestaurant.pickUpTime,
       restaurantId: props.id,
       userId: props.user._id,
@@ -58,7 +65,7 @@ const OrderForm = (props) => {
             </div>
           </div>
           <div className="control">
-            <button className="btn btn-primary" onClick={handleFormSubmit}>
+            <button className="btn teal darken-3" onClick={handleFormSubmit}>
               Submit
             </button>
           </div>
