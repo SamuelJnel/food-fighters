@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import UpdateForm from "../../components/UpdateForm/UpdateForm";
-import { getRestaurants, updateRest } from "../../services/restaurants";
+import { getRestaurants } from "../../services/restaurants";
 
 const Edit = () => {
   let { id } = useParams();

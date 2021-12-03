@@ -1,4 +1,5 @@
 import React from "react";
+//import { getRestaurants } from "../../services/restaurants";
 import "./Restaurants.css";
 import { Link } from "react-router-dom";
 
@@ -19,9 +20,11 @@ const Restaurants = (props) => {
                 <Link to={`/restaurants/${el._id}`}>
                   <button className="btn btn-primary">Purchase</button>
                 </Link>
-                <Link to={`/restaurants/edit/${el._id}`}>
-                  <button className="btn btn-primary">Update</button>
-                </Link>
+                {props.currentUser.name === "admin" && (
+                  <Link to={`/restaurants/edit/${el._id}`}>
+                    <button className="btn btn-primary">Update</button>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

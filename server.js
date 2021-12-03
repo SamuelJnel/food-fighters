@@ -5,12 +5,18 @@ const logger = require("morgan");
 const cors = require("cors");
 require("dotenv").config();
 require("./config/database");
-//const cookieSession = require("cookie-session");
+const cookieSession = require("cookie-session");
 
 const app = express();
 
 app.use(logger("dev"));
 app.use(express.json());
+app.use(
+  cookieSession({
+    name: "foodfighters",
+    keys: ["key1", "key2"],
+  })
+);
 
 app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
 app.use(express.static(path.join(__dirname, "build")));

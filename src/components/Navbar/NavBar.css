@@ -1,8 +1,8 @@
 .nav {
   display: flex;
   flex: 1;
-  height: 55px;
-  background-color: grey;
+  height: 70px;
+  background-color: #778899;
   align-items: center;
 }
 
@@ -11,22 +11,32 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  height: 70px;
   margin-left: auto;
 }
 
 .nav ul li {
   width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav ul li:hover {
+  cursor: pointer;
+  background-color: #00acc1;
+  font-weight: bold;
 }
 
 .nav ul li a {
   text-decoration: none;
-  color: aliceblue;
-}
-
-.nav ul li a:hover {
-  cursor: pointer;
+  color: white;
 }
 
 .nav ul li.active {
-  background-color: blue;
+  background-color: #00acc1;
+}
+.nav ul li span {
+  color: white;
+  font-weight: bold;
 }

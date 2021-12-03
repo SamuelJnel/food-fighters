@@ -21,18 +21,12 @@ const UpdateForm = (props) => {
     fetchRestaurants();
   }, []);
 
-  const currentRestaurant = restaurants.find((el) => el._id === id);
-
   const handleSupplyChange = async (event) => {
     setHasSupply(event.target.value);
-    console.log(hasSupply);
   };
   const handleBagChange = async (event) => {
     setNumOfBags(event.target.value);
-    console.log(NumOfBags);
   };
-
-  console.log(hasSupply);
 
   const handleFormSubmit = async (event) => {
     //stops page from reloading when btn is clicked
@@ -43,7 +37,9 @@ const UpdateForm = (props) => {
     };
 
     await updateRest(formData, id);
-    console.log(restaurants);
+
+    await setRestaurants(formData);
+    //console.log(restaurants);
     history.push("/restaurants"); //redirects
   };
 

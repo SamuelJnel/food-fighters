@@ -15,9 +15,13 @@ export function updateRest(data, id) {
 }
 
 export function createOrder(data) {
+  let token = localStorage.getItem("token");
   return fetch("http://localhost:3001/api/restaurants/:id", {
     method: "POST",
-    headers: new Headers({ "Content-Type": "application/json" }),
+    headers: new Headers({
+      "Content-Type": "application/json",
+      Authorization: token,
+    }),
     body: JSON.stringify(data),
   }).then((res) => res.json);
 }

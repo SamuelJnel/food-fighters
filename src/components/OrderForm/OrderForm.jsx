@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { getRestaurants } from "../../services/restaurants";
 import { createOrder } from "../../services/restaurants";
 
 const OrderForm = (props) => {
+  let { id } = useParams();
   let history = useHistory();
 
   const [restaurants, setRestaurants] = useState([]);
@@ -19,6 +20,8 @@ const OrderForm = (props) => {
     fetchRestaurants();
   }, []);
 
+  const currentRestaurant = restaurants.find((el) => el._id === id);
+
   const handleQuantityChange = async (event) => {
     setQuantity(event.target.value);
   };
@@ -28,6 +31,7 @@ const OrderForm = (props) => {
     event.preventDefault();
     const formData = {
       quantity,
+      pickUpTime: currentRestaurant.pickUpTime,
       restaurantId: props.id,
       userId: props.user._id,
     };
