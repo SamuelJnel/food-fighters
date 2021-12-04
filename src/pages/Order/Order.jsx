@@ -6,8 +6,6 @@ import { deleteOrder, getOrders } from "../../services/orders";
 const Order = (props) => {
   const [orders, setOrders] = useState([]);
 
-  const user = props.user;
-
   async function fetchOrders() {
     const data = await getOrders();
     setOrders(data);
@@ -19,17 +17,12 @@ const Order = (props) => {
   }, []);
 
   const handleDelete = (id) => {
-    console.log(id);
     deleteOrder(id);
 
     fetchOrders();
   };
 
   console.log(orders);
-
-  const currentUserOrders = orders.length
-    ? orders.filter((el) => el.userId === user._id)
-    : [];
 
   return (
     <div className="order-page">

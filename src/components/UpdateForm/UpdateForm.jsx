@@ -30,7 +30,6 @@ const UpdateForm = (props) => {
   };
 
   const handleFormSubmit = async (event) => {
-    //stops page from reloading when btn is clicked
     event.preventDefault();
     const formData = {
       hasSupply: hasSupply,
