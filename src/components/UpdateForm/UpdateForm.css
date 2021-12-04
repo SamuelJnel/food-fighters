@@ -1,0 +1,15 @@
+form select {
+  display: block;
+}
+
+.update-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background-color: #26a69a;
+  padding: 10px;
+  border-radius: 10px;
+}

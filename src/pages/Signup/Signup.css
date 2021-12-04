@@ -7,10 +7,15 @@
   /* width: 500px; */
 }
 form {
-  margin-top: 75px;
+  margin-top: 50px;
   width: 500px;
 }
 
 button {
   color: white;
+}
+
+.form-group {
+  font-size: 30px;
+  color: black;
 }

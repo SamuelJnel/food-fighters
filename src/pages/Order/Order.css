@@ -7,20 +7,6 @@
   justify-content: center;
 }
 
-.row {
-  margin: 0;
-  padding: 0;
-  width: 50%;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
-}
-
-.card {
-  /* width: 100%; */
-}
-
-.card {
-  width: 30%;
-  margin: 0px 20px 50px 20px;
+.card.teal.lighten-5 {
+  width: 400px;
 }

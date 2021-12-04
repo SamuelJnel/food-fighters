@@ -41,3 +41,8 @@
   color: white;
   font-weight: bold;
 }
+
+.logo {
+  width: 100px;
+  margin-left: 15px;
+}

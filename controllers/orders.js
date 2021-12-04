@@ -39,6 +39,7 @@ async function index(req, res) {
 // }
 
 async function deleteOrder(req, res) {
+  console.log(req.params.id);
   await Order.findByIdAndDelete(req.params.id);
   res.json("deleted!");
 }

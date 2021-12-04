@@ -13,14 +13,18 @@ const RestaurantOrder = (props) => {
 
   if (currentRestaurant.hasSupply === "false") {
     return (
-      <div>
-        <h3> We have no supply today.</h3>
+      <div className="rest-order">
+        <div className="rest-order-none">
+          <h3> We have no surplus today.</h3>
+        </div>
         {!props.currentRestaurant && (
-          <div>
-            <p>{currentRestaurant.name}</p>
-            <p>Address: {currentRestaurant.address}</p>
-            <p>Price: ${currentRestaurant.price}</p>
-            <p>Quantity: {currentRestaurant.NumOfBags}</p>
+          <div className="rest-details">
+            <div className="back-color">
+              <p>{currentRestaurant.name}</p>
+              <p>Address: {currentRestaurant.address}</p>
+              <p>Price: ${currentRestaurant.price}</p>
+              <p>Quantity: {currentRestaurant.NumOfBags}</p>
+            </div>
           </div>
         )}
       </div>
@@ -28,16 +32,18 @@ const RestaurantOrder = (props) => {
   }
 
   return (
-    <div>
+    <div className="rest-order">
       <div className="order-form-container">
         <OrderForm id={id} user={user} />
       </div>
       {!props.currentRestaurant && (
-        <div className="restaurant-container">
-          <p>{currentRestaurant.name}</p>
-          <p>Address: {currentRestaurant.address}</p>
-          <p>Price: ${currentRestaurant.price}</p>
-          <p>Quantity: {currentRestaurant.NumOfBags}</p>
+        <div className="rest-details">
+          <div className="back-color">
+            <h3>{currentRestaurant.name}</h3>
+            <p>Address: {currentRestaurant.address}</p>
+            <p>Price: ${currentRestaurant.price}</p>
+            <p>Quantity: {currentRestaurant.NumOfBags}</p>
+          </div>
         </div>
       )}
     </div>

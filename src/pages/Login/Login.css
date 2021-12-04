@@ -4,13 +4,24 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  /* width: 500px; */
+
+  color: black;
 }
 form {
   margin-top: 75px;
   width: 500px;
+  color: black;
 }
 
 button {
   color: white;
+}
+
+input {
+  color: black;
+  background-color: black;
+}
+.form-group {
+  font-size: 30px;
+  color: black;
 }

@@ -13,6 +13,7 @@ import Signup from "./pages/Signup/Signup";
 import userService from "./services/userService";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Edit from "./pages/Edit/Edit";
+import UpdateForm from "./components/UpdateForm/UpdateForm";
 
 const App = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -72,6 +73,9 @@ const App = () => {
           </ProtectedRoute>
           <ProtectedRoute exact path="/restaurants/:id">
             <RestaurantOrder restaurants={restaurants} user={user} />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/restaurants/edit/:id">
+            <UpdateForm />
           </ProtectedRoute>
         </Switch>
       </Router>

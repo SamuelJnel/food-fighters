@@ -11,47 +11,47 @@ const Order = (props) => {
   async function fetchOrders() {
     const data = await getOrders();
     setOrders(data);
+    console.log(orders);
   }
 
   useEffect(() => {
     fetchOrders();
   }, []);
 
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => {
+    console.log(id);
     deleteOrder(id);
-    // console.log(id);
-    const items = await getOrders();
-    //console.log(items);
-    setOrders(items);
+
+    fetchOrders();
   };
 
   console.log(orders);
 
   const currentUserOrders = orders.length
-    ? orders.map((el) => el.userId === user._id)
+    ? orders.filter((el) => el.userId === user._id)
     : [];
 
   return (
-    <div>
+    <div className="order-page">
       {orders && (
         <div className="item-container ">
-          {currentUserOrders.map((el, idx) => (
+          {orders.map((el, idx) => (
             <div key={idx} className="row ">
               <div className="col s12 m6">
-                <div className="card blue-grey darken-1">
-                  <div className="card-content white-text">
+                <div className="card teal lighten-5">
+                  <div className="card-content black-text">
                     <span className="card-title">
                       Order for: {el.establishment}
                     </span>
                     <p> Number of Bags: {el.quantity}</p>
-                    <p>Pick-up Date: {el.pickUpDate /*.slice(0, 10)*/}</p>
-                    <p>Pick-up Date: {el.pickUpTime}</p>
+                    <p>Pick-up Date: {el.pickUpDate.slice(0, 10)}</p>
+                    <p>Pick-up Time: {el.pickUpTime}</p>
                     <p>Conformation code: {el.conformationCode}</p>
                   </div>
                   <div className="card-action">
                     <button
                       className="btn teal darken-3"
-                      onClick={(_id) => {
+                      onClick={() => {
                         handleDelete(el._id);
                       }}
                     >

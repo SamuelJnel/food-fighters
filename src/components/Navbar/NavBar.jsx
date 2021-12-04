@@ -1,10 +1,16 @@
 import React from "react";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
+import "./logo3.jpg";
 
 const NavBar = (props) => {
   let nav = props.currentUser ? (
     <div className="nav teal darken-3">
+      {/* <div class="nav-wrapper left">
+        <a href="/" class="brand-logo">
+          <img class="logo" src="../../../public/logo2.png" alt="logo" />
+        </a>
+      </div> */}
       <ul>
         <li>
           <span className="user">Welcome, {props.currentUser.name}</span>

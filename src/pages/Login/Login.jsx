@@ -38,7 +38,7 @@ class Login extends Component {
             <input
               type="email"
               placeholder="Email"
-              className="form-control"
+              className=""
               name="email"
               onChange={this.handleChange}
             />
@@ -47,12 +47,12 @@ class Login extends Component {
             <input
               type="password"
               placeholder="Password"
-              className="form-control"
+              className=""
               name="password"
               onChange={this.handleChange}
             />
           </div>
-          <div className="form-group">
+          <div className="">
             <button className="btn teal darken-3">Log in</button>
           </div>
         </form>

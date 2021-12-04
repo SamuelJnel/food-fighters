@@ -43,7 +43,6 @@ class Signup extends Component {
             <input
               type="text"
               placeholder="Name"
-              className="form-control"
               name="name"
               onChange={this.handleChange}
             />
@@ -52,7 +51,6 @@ class Signup extends Component {
             <input
               type="email"
               placeholder="Email"
-              className="form-control"
               name="email"
               onChange={this.handleChange}
             />
@@ -61,7 +59,6 @@ class Signup extends Component {
             <input
               type="password"
               placeholder="Password"
-              className="form-control"
               name="password"
               onChange={this.handleChange}
             />
@@ -71,7 +68,6 @@ class Signup extends Component {
               type="password"
               placeholder="Confirm Password"
               name="confirmPassword"
-              className="form-control"
               onChange={this.handleChange}
             />
           </div>
